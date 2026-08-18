@@ -40,15 +40,20 @@ in `data/processed/`.
 
 ## Usage
 
-```bash
-# train one model for one seed
-python src/train.py --model multiscale --seed 42
+Trained checkpoints for the three reported seeds are included in
+`results/seeds/`, so evaluation runs without retraining. The data
+splits are not included; run `notebooks/01_data_exploration.ipynb`
+first to generate them in `data/processed/`.
 
-# evaluate across seeds, with and without TTA
+```bash
+# evaluate the included checkpoints across seeds, with and without TTA
 python src/evaluate.py --model multiscale --seeds 42 1 7
 
 # regenerate figures from saved metrics
 python src/plots.py --model multiscale
+
+# retrain from scratch (about 30 min per seed on an RTX 3050)
+python src/train.py --model multiscale --seed 42
 ```
 
 ## Structure

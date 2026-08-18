@@ -1,8 +1,13 @@
 # Data and checkpoints
 data/
-*.pt
 *.pkl
 *.npy
+
+# Excluded checkpoints except the three 
+*.pt
+!results/seeds/multiscale_seed42.pt
+!results/seeds/multiscale_seed1.pt
+!results/seeds/multiscale_seed7.pt
 
 # Python
 __pycache__/
